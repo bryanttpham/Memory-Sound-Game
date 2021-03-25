@@ -1,5 +1,5 @@
 //Global constants
-const clueHoldTime= 1000; //How long to ghold each clue's light/sound
+const clueHoldTime= 500; //How long to hold each clue's light/sound
 const cluePauseTime =150;
 const nextClueWaitTime=300;
 
@@ -10,17 +10,32 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;
 var guessCounter=0;
+var lives=3
+var interval = setInterval(myTimer, 1000);
+
+  
+function myTimer() {
+  var t = 0;
+  document.getElementById("demo").innerHTML = t;
+}
+
+function myStopFunction() {
+  clearInterval(interval);
+}
+
 
 
 function startGame()
 {
 //intialize game variables
   progress=0;
+  lives=3;
   gamePlaying =true;
   //swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
+  
 }
 
 function endGame()
@@ -31,6 +46,7 @@ function endGame()
   document.getElementById("stopBtn").classList.add("hidden");
   
 }
+
 
 
 // Sound Synthesis Functions
@@ -103,7 +119,16 @@ function playClueSequence()
     delay+=clueHoldTime;
     delay+=cluePauseTime;
   }
+  var stop=2000;
+  var t=0;
+  var interval = setInterval(t, 1000);
+  if(interval==stop)
+    {
+      clearInterval(t);
+      loseGame();
+    }
 }
+  
 
 function loseGame()
 {
@@ -117,6 +142,11 @@ function winGame()
   endGame();
   alert("GameOver. You Won!")
   
+}
+
+function timer()
+{
+
 }
 
 function guess(btn)
@@ -146,8 +176,13 @@ function guess(btn)
       guessCounter++;
     }
   } else {
-    loseGame();
+    lives--
   }
+  
+  if(lives==0)
+    {
+        loseGame()
+    }
 }
 
 
