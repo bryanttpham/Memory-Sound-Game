@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    
+     
+  </head>  
+  <body>
+    <h1 style="text-align:center;">MEMORY SOUND GAME!</h1>
+    
+    <p style="text-align:center;">
+      Are you ready to test your memory!? Click Start when you are ready!
+    </p>
+    
+    
+    <div id = "gameButtonArea">
+      <button id ="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()">
+        <img src="https://preview.redd.it/xyqo6hx42sn51.png?width=440&format=png&auto=webp&s=3bf357e64a68883aee1618a1abdadc16d9ceee73" width="160" >
+      </button>
+      <button id ="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()">
+        <img src="https://i.pinimg.com/originals/ee/0b/83/ee0b8322db7fb7939469a67e889318d4.png" width="173"  >
+      </button>
+      <button id ="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()">
+        <img src="https://preview.redd.it/ph2jho4o1sn51.png?width=440&format=png&auto=webp&s=7e080e5447d69d1425a8b8a20f1115de18aa69fd" width="175" >
+      </button>
+      <button id ="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()">
+        <img src="https://wonder-day.com/wp-content/uploads/2020/10/wonder-day-among-us-19.png" width="197" >
+      </button>
+    </div>
+    
+    <button id="startBtn" onclick="startGame()">
+      Start
+    </button>
+    <button id="stopBtn" class="hidden" onclick="endGame()">
+      End
+    </button>
+    
+    <div>
+      
+    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/ff861c9745d910a54d4d61e4e37a1602-1605431705/SampleHands/create-personalized-among-us-gif-and-png-for-you.GIF" width="160" class="center" >
+
+    </div>
+    
+  
+
+
+    
+  </body>
+</html>
